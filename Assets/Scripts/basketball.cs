@@ -5,7 +5,7 @@ public class basketball : MonoBehaviour {
 
 	public AudioClip boink;
 	public AudioSource myAudio;
-	public int score;
+	public static int score;
 
 
 	// Use this for initialization
@@ -24,6 +24,10 @@ public class basketball : MonoBehaviour {
 		myAudio.PlayOneShot(boink);
 		score++;
 		Debug.Log (score);
+
+		//		if(collider.gameObject.name == "rim"){
+//					score++;
+//				}
 
 	}
 
