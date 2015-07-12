@@ -40,9 +40,6 @@ public class Shoot : MonoBehaviour {
 
 		ball.GetComponent<Rigidbody>().velocity = newDir *speed;
 
-
-
-
 	}
 
 }

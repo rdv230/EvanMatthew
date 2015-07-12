@@ -161,7 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boink: {fileID: 8300000, guid: 9ff92dcc55a3f4307aea177fc7906655, type: 3}
   myAudio: {fileID: 8280890}
-  score: 0
 --- !u!135 &13554020
 SphereCollider:
   m_ObjectHideFlags: 1

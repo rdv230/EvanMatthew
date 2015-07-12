@@ -7,7 +7,6 @@ public class basketball : MonoBehaviour {
 	public AudioSource myAudio;
 	public static int score;
 
-
 	// Use this for initialization
 	void Start () {
 		
@@ -19,16 +18,25 @@ public class basketball : MonoBehaviour {
 	}
 
 
+
 	void OnCollisionEnter(Collision collider){
 		//What we want to do next is make it so that the velocity of the basketball is tied to the sound
-		myAudio.PlayOneShot(boink);
-		score++;
-		Debug.Log (score);
+		float bBallVolume = GetComponent<Rigidbody>().velocity.magnitude/40;
+		//Debug.Log ("bBallVolume: " + bBallVolume);
+		myAudio.PlayOneShot(boink, bBallVolume);
+	
+		if(collider.gameObject.tag == "head"){
+			score++;
+			Debug.Log ("score: " + score);
+		} 
+		//else if (collider.gameObject.tag == "curry"){
+		//	Debug.Log ("Haha, you missed my head!");
+		//}
+
+	}
 
 		//		if(collider.gameObject.name == "rim"){
 //					score++;
 //				}
-
-	}
 
 }
