@@ -19,7 +19,7 @@ public class basketball : MonoBehaviour {
 
 
 
-	void OnCollisionEnter(Collision collider){
+	void OnTriggerEnter(Collider collider){
 		//What we want to do next is make it so that the velocity of the basketball is tied to the sound
 		float bBallVolume = GetComponent<Rigidbody>().velocity.magnitude/40;
 		//Debug.Log ("bBallVolume: " + bBallVolume);
@@ -33,6 +33,11 @@ public class basketball : MonoBehaviour {
 		//	Debug.Log ("Haha, you missed my head!");
 		//}
 
+	}
+
+	void OnCollisionEnter(Collision Collider){
+		float bBallVolume = GetComponent<Rigidbody>().velocity.magnitude/40;
+		myAudio.PlayOneShot(boink, bBallVolume);
 	}
 
 		//		if(collider.gameObject.name == "rim"){
